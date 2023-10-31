@@ -2,26 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.container {
+  font-family: "arial";
+  font-size: 24px;
+  place-items: center;
+}
+
+.typed {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  width: 0;
+  animation: typing 3s steps(200, end) forwards, blinking 5s infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.split {
+  display: flex;
+  flex-direction: row;
+}
+.gutter {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: rgb(6, 6, 45);
+}
+
+.gutter.gutter-vertical {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+  cursor: row-resize;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+  cursor: col-resize;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(61, 61, 61);
+}
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+
+code {
+  border-radius: 5px;
+  border-width: 1px;
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.125rem;
+  letter-spacing: 1px;
+  background-color: rgb(53, 53, 53);
+  border-color: grey;
+}
+
+.example-card pre {
+  border-radius: 0.5rem;
+  font-size: 0.98rem;
+  border: rgb(43, 43, 43) 1px solid;
+  line-height: 1.25rem;
+  background-color: rgb(27, 37, 48);
+  padding: 1rem;
+  white-space: pre-wrap;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.example-card strong {
+  color: wihte;
+  font-size: 1rem;
 }
