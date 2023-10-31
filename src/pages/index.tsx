@@ -11,7 +11,7 @@ export default function Home() {
     <main className="bg-gradient-to-tr from-slate-800 to-black  relative text-white py-3">
       <Topbar />
       <h1 className="text-2xl text-center text-blue-300 font-medium  mt-10 mb-5">
-        PROBLEM's LIST
+        {"PROBLEM's LIST"}
       </h1>
 
       <div className="relative overflow-x-auto mx-auto  pb-10  ">
